@@ -45,3 +45,39 @@ document.addEventListener("DOMContentLoaded", function () {
     status.classList.add("success");
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".lightbox-close");
+  const galleryImages = document.querySelectorAll(".gallery-img");
+
+  if (!lightbox || !lightboxImg || galleryImages.length === 0) return;
+
+  function openLightbox(img) {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add("open");
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightboxImg.src = "";
+  }
+
+  galleryImages.forEach(function (img) {
+    img.addEventListener("click", function () {
+      openLightbox(img);
+    });
+  });
+
+  closeBtn.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", function (e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeLightbox();
+  });
+});
