@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const preferredPosition = form.preferred_position.value;
     const otherPosition = form.position.value || "Not specified";
     const ntuEmail = form.ntu_email.value.trim();
-    const whatsapp = form.whatsapp.value.trim() || "Not specified";
+    const whatsapp = form.whatsapp.value.trim();
 
-    if (!name || !preferredPosition || !ntuEmail) {
-      status.textContent = "Please fill in Name, Preferred Position, and NTU Email Address.";
+    if (!name || !preferredPosition || !ntuEmail || !whatsapp) {
+      status.textContent = "Please fill in Name, Preferred Position, NTU Email Address, and Phone Number.";
       status.classList.add("error");
       return;
     }
