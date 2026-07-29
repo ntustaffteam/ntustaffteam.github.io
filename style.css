@@ -107,6 +107,18 @@ nav a:hover {
   box-shadow: 0 6px 16px rgba(215, 20, 64, 0.35);
 }
 
+.btn-outline {
+  background: transparent;
+  color: var(--blue);
+  border: 2px solid var(--blue);
+  padding: 12px 30px;
+}
+
+.btn-outline:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
 /* Sections */
 .section {
   padding: 64px 24px;
@@ -184,6 +196,15 @@ nav a:hover {
   transform: scale(1.03);
 }
 
+.gallery-extra {
+  display: none;
+}
+
+.gallery-more-wrap {
+  text-align: center;
+  margin-top: 24px;
+}
+
 /* Lightbox */
 .lightbox {
   display: none;
@@ -220,6 +241,45 @@ nav a:hover {
   line-height: 1;
   cursor: pointer;
   padding: 4px 8px;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--white);
+  font-size: 2.5rem;
+  line-height: 1;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.lightbox-arrow:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.lightbox-prev {
+  left: 16px;
+}
+
+.lightbox-next {
+  right: 16px;
+}
+
+@media (max-width: 600px) {
+  .lightbox-arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 2rem;
+  }
 }
 
 /* Form */
