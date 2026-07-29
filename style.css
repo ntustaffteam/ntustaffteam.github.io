@@ -195,6 +195,12 @@ nav a:hover {
   align-self: flex-start;
 }
 
+.form-hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0;
+}
+
 .form-status {
   font-size: 0.95rem;
   font-weight: 600;
