@@ -66,6 +66,11 @@
       </div>
 
       <div class="form-row">
+        <label for="nickname">Nickname <span class="optional">(optional)</span></label>
+        <input type="text" id="nickname" name="nickname" placeholder="What we should call you">
+      </div>
+
+      <div class="form-row">
         <label for="preferred_position">Preferred Position</label>
         <select id="preferred_position" name="preferred_position" required>
           <option value="" disabled selected>Select a position</option>
@@ -97,8 +102,13 @@
       </div>
 
       <div class="form-row">
-        <label for="contact">Contact (email or phone)</label>
-        <input type="text" id="contact" name="contact" required placeholder="you@example.com or phone number">
+        <label for="ntu_email">NTU Email Address</label>
+        <input type="email" id="ntu_email" name="ntu_email" required placeholder="you@ntu.edu.sg" pattern=".+@.+\..+">
+      </div>
+
+      <div class="form-row">
+        <label for="whatsapp">Phone Number (for WhatsApp) <span class="optional">(optional)</span></label>
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="+65 1234 5678">
       </div>
 
       <button type="submit" class="btn btn-primary">Open Email to Send</button>
