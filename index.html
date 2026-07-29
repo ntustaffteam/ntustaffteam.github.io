@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NTU Staff Team</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="brand-mark">NTU</span>
+      <span class="brand-name">Staff Team</span>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#join">Join Us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <h1>NTU Staff Team</h1>
+    <p>Kicking off together — on and off campus.</p>
+    <a href="#join" class="btn btn-primary">Sign Up to Join</a>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <h2>About Us</h2>
+    <p>
+      The NTU Staff Team is a friendly soccer club open to all NTU staff members.
+      Whether you're a seasoned player or picking up the game for the first time,
+      we welcome you to train, play, and connect with colleagues on the pitch.
+    </p>
+  </div>
+</section>
+
+<section id="gallery" class="section section-alt">
+  <div class="container">
+    <h2>Gallery</h2>
+    <p class="muted">Photos coming soon — this space will be updated with team pictures.</p>
+    <div class="gallery-grid">
+      <div class="gallery-placeholder">Photo</div>
+      <div class="gallery-placeholder">Photo</div>
+      <div class="gallery-placeholder">Photo</div>
+      <div class="gallery-placeholder">Photo</div>
+    </div>
+  </div>
+</section>
+
+<section id="join" class="section">
+  <div class="container">
+    <h2>Join the Team</h2>
+    <p class="muted">Fill out the form below, then click the button to open a pre-filled email in your own email app. Just hit send from there.</p>
+
+    <form id="signup-form" class="signup-form">
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your full name">
+      </div>
+
+      <div class="form-row">
+        <label for="preferred_position">Preferred Position</label>
+        <select id="preferred_position" name="preferred_position" required>
+          <option value="" disabled selected>Select a position</option>
+          <option value="Goalkeeper">Goalkeeper</option>
+          <option value="Center Back">Center Back</option>
+          <option value="Full Back">Full Back</option>
+          <option value="Defensive Midfielder">Defensive Midfielder</option>
+          <option value="Central Midfielder">Central Midfielder</option>
+          <option value="Attacking Midfielder">Attacking Midfielder</option>
+          <option value="Winger">Winger</option>
+          <option value="Striker / Forward">Striker / Forward</option>
+          <option value="No preference">No preference</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="position">Other Position You Can Play <span class="optional">(optional)</span></label>
+        <select id="position" name="position">
+          <option value="" selected>None</option>
+          <option value="Goalkeeper">Goalkeeper</option>
+          <option value="Center Back">Center Back</option>
+          <option value="Full Back">Full Back</option>
+          <option value="Defensive Midfielder">Defensive Midfielder</option>
+          <option value="Central Midfielder">Central Midfielder</option>
+          <option value="Attacking Midfielder">Attacking Midfielder</option>
+          <option value="Winger">Winger</option>
+          <option value="Striker / Forward">Striker / Forward</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="contact">Contact (email or phone)</label>
+        <input type="text" id="contact" name="contact" required placeholder="you@example.com or phone number">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Open Email to Send</button>
+      <p id="form-status" class="form-status"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 NTU Staff Team. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
