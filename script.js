@@ -57,17 +57,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let revealed = 0;
 
+  function updateButtons() {
+    moreBtn.disabled = revealed >= extraImages.length;
+    lessBtn.disabled = revealed === 0;
+  }
+
   moreBtn.addEventListener("click", function () {
     const nextBatch = extraImages.slice(revealed, revealed + PAGE_SIZE);
     nextBatch.forEach(function (img) {
       img.classList.remove("gallery-extra");
     });
     revealed += nextBatch.length;
-
-    lessBtn.hidden = false;
-    if (revealed >= extraImages.length) {
-      moreBtn.hidden = true;
-    }
+    updateButtons();
   });
 
   lessBtn.addEventListener("click", function () {
@@ -75,8 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
       img.classList.add("gallery-extra");
     });
     revealed = 0;
-    moreBtn.hidden = false;
-    lessBtn.hidden = true;
+    updateButtons();
     gallerySection.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
