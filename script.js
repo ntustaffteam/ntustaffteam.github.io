@@ -48,16 +48,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const moreBtn = document.getElementById("gallery-more-btn");
-  const extraImages = document.querySelectorAll(".gallery-extra");
+  const gallerySection = document.getElementById("gallery");
+  const extraImages = Array.from(document.querySelectorAll(".gallery-extra"));
+  const PAGE_SIZE = 3;
 
-  if (moreBtn && extraImages.length > 0) {
-    moreBtn.addEventListener("click", function () {
-      extraImages.forEach(function (img) {
+  if (!moreBtn || extraImages.length === 0) return;
+
+  let revealed = 0;
+
+  moreBtn.addEventListener("click", function () {
+    if (revealed < extraImages.length) {
+      const nextBatch = extraImages.slice(revealed, revealed + PAGE_SIZE);
+      nextBatch.forEach(function (img) {
         img.classList.remove("gallery-extra");
       });
-      moreBtn.style.display = "none";
-    });
-  }
+      revealed += nextBatch.length;
+
+      if (revealed >= extraImages.length) {
+        moreBtn.textContent = "Show Less";
+      }
+    } else {
+      extraImages.forEach(function (img) {
+        img.classList.add("gallery-extra");
+      });
+      revealed = 0;
+      moreBtn.textContent = "More Photos";
+      gallerySection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
