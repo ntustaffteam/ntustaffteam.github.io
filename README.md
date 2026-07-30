@@ -1,4 +1,4 @@
-# NTU Staff Team Website
+# NTU Staff Football Team Website
 
 A simple 3-file website (`index.html`, `style.css`, `script.js`) with a signup
 form. No backend, no server, no account signups required.
