@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const subject = `NTU Staff Team Signup - ${name}`;
+    const subject = `NTU Staff Football Team Signup - ${name}`;
     const body =
       `Name: ${name}\n` +
       `Nickname: ${nickname}\n` +
